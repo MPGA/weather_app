@@ -10,7 +10,7 @@ class App extends React.Component {
    
   state = {
     temperature : undefined,
-    city : undefined,
+    city : undefined, 
     country: undefined,
     humidity: undefined,
     description: undefined,
@@ -50,20 +50,36 @@ class App extends React.Component {
   render() {
     return(
    <div>
-      <Title/>
-      <Form getWeather={this.getWeather}/>
-      <Weather
-        temperature={this.state.temperature}
-        city={this.state.city}
-        country={this.state.country}
-        description={this.state.description}
-        humidity={this.state.humidity}
-        error= {this.state.error}
-      />
+      <div className="wrapper">
+        <div className="main">
+          <div className="container">
+            <div className="row">
+              <div className="col-xs-5 title-container">
+              <Title/>
+          </div>
+        <div className="col-xs7 form-container">
+          <Form getWeather={this.getWeather}/>
+          <Weather
+             temperature={this.state.temperature}
+             city={this.state.city}
+             country={this.state.country}
+             description={this.state.description}
+             humidity={this.state.humidity}
+             error= {this.state.error}
+            />
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>    
 
     );
   }
 };
+
+
+
 
 export default App;
